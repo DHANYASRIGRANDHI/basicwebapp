@@ -1,0 +1,60 @@
+Steps:
+Create a folder:
+md node1
+cd node1
+Open the node1 folder in VSCode Editor
+Open Terminal > New Terminal
+node1>npm init
+Just press <Enter>
+and Yes.
+It will create a Package.json
+Install:
+npm install express
+Create a file index.js
+Use code:
+const express = require('express')
+const app = express()
+app.get('/', (req, res) => res.send('Hello World!'))     / means path
+app.listen(3001, () => console.log('Server ready'))
+................
+In terminal:
+npm index.js
+Open localhost:3001/
+..............................
+For automatic updations:
+npm install -D nodemon
+Use in package.json:
+"scripts":
+{"start":"node index",
+"dev":"nodemon index"
+}
+Explain:
+There is a method for every HTTP verb: get() , post() , put() , delete() , patch() :
+app.get('/', (req, res) => { /* */ })
+app.post('/', (req, res) => { /* */ })
+app.put('/', (req, res) => { /* */ })
+app.delete('/', (req, res) => { /* */ })
+app.patch('/', (req, res) => { /* */ })
+Those methods accept a callback function, which is called when a request is started, and we
+need to handle it.
+...............................
+Request parameters
+A handy reference to all the request object properties and how to use them
+Request parameters
+I mentioned how the Request object holds all the HTTP request information.
+These are the main properties you'll likely use:
+Property Description
+.app holds a reference to the Express app object
+.baseUrl the base path on which the app responds
+.body contains the data submitted in the request body (must be parsed and
+populated manually before you can access it)
+.cookies contains the cookies sent by the request (needs the cookie-parser
+middleware)
+.hostname the server hostname
+.status:is a number 
+types of status codes are:
+.200:successfull process,reponse.
+.300:connection failure errors.
+.400:error in resourse/code/route/not found.
+.500:internal server error
+.................................................
